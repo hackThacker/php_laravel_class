@@ -10,5 +10,6 @@
     <x-navbar/>
     <h1>
 This is contact us pages <br>  </h1>
+<x-footer/>
 </body>
 </html>

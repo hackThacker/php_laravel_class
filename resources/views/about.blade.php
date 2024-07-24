@@ -9,5 +9,6 @@
 <body>
     <x-navbar/>
     <h1>This is about pages </h1>
+    <x-footer/>
 </body>
 </html>

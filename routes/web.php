@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // Define a GET route for the root URL ('/')
@@ -20,8 +21,8 @@ Route::get('/contactus', function () {
     return view('contactus');
 });
 
-Route::get('/welcome', function(){
-    return view('welcome');
+Route::get('/course', function(){
+    return view('course');
 });
 
 // Define a GET route for the '/niraj/{p}' URL
@@ -60,4 +61,9 @@ Route::get('/dynamic/{a}/{b}', function($a, $b) {
     return view('dynamic', compact('a', 'b'));
 
     // Note: Ensure that the 'dynamic' view exists in the resources/views directory
+});
+
+Route::post('/post_courses',function(Request $request){
+    $course -> course;
+    
 });
