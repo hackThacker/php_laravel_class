@@ -13,12 +13,12 @@
     <section class="py-10">
         <div class="container mx-auto">
             <h1 class="text-2xl font-bold text-center mb-6">Courses</h1>
-            <form action="/post_courses" method="post">
+            <form action="/post_courses" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="py-10 flex flex-col gap-7">
                     <div>
                         <label for="name" class="block font-semibold">Course Name:</label>
-                        <input type="text" name="course" id="name" class="border border-gray-300 rounded p-2 w-full">
+                        <input type="text" name="name" id="name" class="border border-gray-300 rounded p-2 w-full">
                     </div>
                     <div>
                         <label for="price" class="block font-semibold">Course Price:</label>
