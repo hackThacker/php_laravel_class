@@ -7,24 +7,24 @@ use Illuminate\Support\Facades\Route;
 // When accessed, this route will return the 'welcome' view
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 // Define a GET route for the '/about' URL
 // When accessed, this route will return the 'about' view
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
 
 // Define a GET route for the '/contactus' URL
 // When accessed, this route will return the 'contactus' view
 Route::get('/contactus', function () {
     return view('contactus');
-});
+})->name('contactus');
 
 Route::get('/course', function () {
     $courses = course::all();
     return view('course', compact('courses'));
-});
+})->name('course');
 
 // Define a GET route for the '/niraj/{p}' URL
 // The {p} parameter is a placeholder for a dynamic value
@@ -35,7 +35,8 @@ Route::get('/niraj/{p}', function ($p) {
     // Return the value of $p
     // In the example, the return value would be '123'
     return $p;
-});
+})->name('niraj.show'); // Changed to 'niraj.show' for clarity
+
 
 // Define a GET route for the '/admin/{p}/{a}/{b}' URL
 // The {p}, {a}, and {b} parameters are placeholders for dynamic values
@@ -49,7 +50,7 @@ Route::get('/admin/{p}/{a}/{b}', function ($p, $a, $b) {
 
     // Note: The values are treated as strings and concatenated
     // Ensure that the URL segments are appropriate for concatenation
-});
+})->name('admin.show');
 
 // Define a GET route for the '/dynamic/{a}/{b}' URL
 // The {a} and {b} parameters are placeholders for dynamic values
@@ -62,7 +63,8 @@ Route::get('/dynamic/{a}/{b}', function($a, $b) {
     return view('dynamic', compact('a', 'b'));
 
     // Note: Ensure that the 'dynamic' view exists in the resources/views directory
-});
+})->name('dynamic.show'); // Changed to 'niraj.show' for clarity
+
 
 Route::post('/post_courses',function(Request $request){
 {
@@ -85,6 +87,4 @@ return redirect()->back();
 
 }
 
-
-
-});
+})->name('post_course');
