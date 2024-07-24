@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body>
-    <x-navbar />
+<x-frontend-layout>
     <section class="py-10">
         <div class="container mx-auto">
             <h1 class="text-2xl font-bold text-center mb-6">Courses</h1>
@@ -41,9 +30,9 @@
             <thead>
                 <tr>
                     <th class="border border-black px-4 py-2">SN</th>
+                    <th class="border border-black px-4 py-2">Images</th>
                     <th class="border border-black px-4 py-2">Name</th>
                     <th class="border border-black px-4 py-2">Price</th>
-                    <th class="border border-black px-4 py-2">Images</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,7 +53,4 @@
     
 
 </section>
-    <x-footer />
-</body>
-
-</html>
+</x-frontend-layout>
