@@ -1,5 +1,5 @@
 <?php
-
+use App\Models\course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -64,6 +64,26 @@ Route::get('/dynamic/{a}/{b}', function($a, $b) {
 });
 
 Route::post('/post_courses',function(Request $request){
-    $course -> course;
-    
+{
+
+   // Create new course instance
+$Course = new Course();
+$Course->name = $request->name;
+$Course->price = $request->price;
+
+// Handle file upload
+if ($request->hasFile('file')) {
+    $file = $request->file('file');
+    $newName = time() . '_' . $file->getClientOriginalName();
+    $file->move('images', $newName); // Move the file to 'images' directory with the new name
+    $Course->file = 'images/' . $newName; // Set the file path for the Course object
+}
+
+$Course->save();
+return redirect()->back()->with('success', 'Course saved successfully.');
+
+}
+
+
+
 });
