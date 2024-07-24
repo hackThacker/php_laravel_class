@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body>
-<x-navbar/>
-
+<x-frontend-layout :title="'Home'">
 <div class="container mx-auto my-10 p-6 bg-white shadow-md flex items-center justify-between">
     <div class="text max-w-lg">
         <h1 class="text-2xl font-bold mb-4">Learning laravel</h1>
@@ -27,7 +14,4 @@
         <img src="https://laravel.com/img/logotype.min.svg" alt="Laravel Logotype" class="w-60 h-40">
     </div>
 </div>
-<x-footer/>
-</body>
-
-</html>
+</x-frontend-layout>

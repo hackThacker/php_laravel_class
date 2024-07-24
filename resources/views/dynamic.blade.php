@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite(['resources/css/app.css','resources/js/app.js'])
-</head>
-<body>
-<h1>
-    this this for dynamic route parameters
-</h1>
-
-<h2> dynamic url data <span style="color: red">{{$a}} {{$b}}</span></h2>
-</body>
-</html>
+<x-frontend-layout :title="'Dynamic'">
+    <h1>
+        this is dynamic url data:
+    </h1>
+    <h2>
+        dynamic url:  <span style="color:red" class="rounded-md border border-black">{{$a}} {{$b}}</span>
+    </h2>
+</x-frontend-layout>
