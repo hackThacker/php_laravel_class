@@ -21,8 +21,9 @@ Route::get('/contactus', function () {
     return view('contactus');
 });
 
-Route::get('/course', function(){
-    return view('course');
+Route::get('/course', function () {
+    $courses = course::all();
+    return view('course', compact('courses'));
 });
 
 // Define a GET route for the '/niraj/{p}' URL
@@ -80,7 +81,7 @@ if ($request->hasFile('file')) {
 }
 
 $Course->save();
-return redirect()->back()->with('success', 'Course saved successfully.');
+return redirect()->back();
 
 }
 
