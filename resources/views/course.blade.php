@@ -35,6 +35,35 @@
             </form>
         </div>
     </section>
+<section>
+    <div class="container mx-auto">
+        <table class="w-full border border-black text-center">
+            <thead>
+                <tr>
+                    <th class="border border-black px-4 py-2">SN</th>
+                    <th class="border border-black px-4 py-2">Name</th>
+                    <th class="border border-black px-4 py-2">Price</th>
+                    <th class="border border-black px-4 py-2">Images</th>
+                </tr>
+            </thead>
+            <tbody>
+                    @foreach ($courses as $niraj=>$course)
+                    <tr>
+                    <td class="border border-black px-4 py-2">{{++$niraj}}</td>
+                    <td class="border border-black px-4 py-2 w-40">
+                        <img src="{{$course->file}}" alt="images" srcset="">
+                    </td>
+                    <td class="border border-black px-4 py-2">{{$course->name}}</td>
+                    <td class="border border-black px-4 py-2">{{$course->price}}</td>
+                    
+                    @endforeach
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+</section>
     <x-footer />
 </body>
 
