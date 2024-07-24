@@ -10,16 +10,16 @@
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
-                    <a href="/" class="hover:underline me-4 md:me-6">Home</a>
+                    <a href="{{ route('home') }}" class="hover:underline me-4 md:me-6">Home</a>
                 </li>
                 <li>
-                    <a href="/about" class="hover:underline me-4 md:me-6">About</a>
+                    <a href="{{ route('about') }}" class="hover:underline me-4 md:me-6">About</a>
                 </li>
                 <li>
-                    <a href="/dynamic" class="hover:underline me-4 md:me-6">Dynamic</a>
+                    <a href="{{ route('dynamic.show', ['a' => 'John', 'b' => 'Doe']) }}" class="hover:underline me-4 md:me-6">Dynamic</a>
                 </li>
                 <li>
-                    <a href="/contactus" class="hover:underline">Contact</a>
+                    <a href="{{ route('course') }}" class="hover:underline me-4 md:me-6">Courses</a>
                 </li>
             </ul>
         </div>

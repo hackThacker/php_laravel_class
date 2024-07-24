@@ -13,15 +13,15 @@
     <nav>
         <ul class="flex space-x-6">
             <li>
-                <a href="/" class="hover:text-gray-300">Home</a>
+                <a href="{{ route('home')}}" class="hover:text-gray-300">Home</a>
             </li>
             <li>
-                <a href="/contactus" class="hover:text-gray-300">Contact</a>
+                <a href="{{route('contactus')}}" class="hover:text-gray-300">Contact</a>
             </li>
             <li>
-                <a href="/about" class="hover:text-gray-300">About</a>
+                <a href="{{route('about')}}" class="hover:text-gray-300">About</a>
             </li>
-            <li><a href="/course" class="hover:text-gray-300">Course</a></li>
+            <li><a href="{{route('course')}}" class="hover:text-gray-300">Course</a></li>
         </ul>
     </nav>
 </div>
