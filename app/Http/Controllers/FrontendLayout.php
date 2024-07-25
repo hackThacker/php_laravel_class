@@ -56,24 +56,27 @@ return redirect()->back();
     public function admission()
     {
         $courses = Course::all(); // Fetch all courses
-        return view('admission', compact('courses')); // Pass courses to the view
+         // Pass courses to the view
+        $admissions = Admission::all();
+        return view('admission', compact('admissions','courses'));
     }
     public function post_admission(Request $request)
 {
-    // Create new admission record
-    $admission = new Admission();
-    $admission->course_name = $request->course_name;
-    $admission->course_price = $request->course_price;
-    $admission->full_name = $request->full_name;
-    $admission->email = $request->email;
-    $admission->mobile_number = $request->mobile_number;
-    $admission->birthdate = $request->birthdate;
-    $admission->age = $request->age;
-    $admission->father_number = $request->father_number;
-    $admission->mother_number = $request->mother_number;
-    $admission->citizenship_id = $request->citizenship_id;
-    $admission->location = $request->location;
 
+
+    // Create new admission record
+    $Admission = new Admission();
+    $Admission->course_name = $request->course_name;
+    $Admission->course_price = $request->course_price;
+    $Admission->full_name = $request->full_name;
+    $Admission->email = $request->email;
+    $Admission->mobile_number = $request->mobile_number;
+    $Admission->birthdate = $request->birthdate;
+    $Admission->age = $request->age;
+    $Admission->father_number = $request->father_number;
+    $Admission->mother_number = $request->mother_number;
+    $Admission->citizenship_id = $request->citizenship_id;
+    $Admission->location = $request->location;
     // Handle file upload if present
     if ($request->hasFile('image')) {
         $image = $request->file('image');
@@ -81,7 +84,7 @@ return redirect()->back();
         $image->move('images', $newName); // Move the file to 'images' directory with the new name
         $admission->image = 'images/' . $newName; // Set the file path for the Course object
     }
-    $admission->save();
+    $Admission->save();
     return redirect()->back();
 }
 }
