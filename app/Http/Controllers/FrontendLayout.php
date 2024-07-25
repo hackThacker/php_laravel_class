@@ -3,35 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Course;
+
 
 class FrontendLayout extends Controller
 {
     public function home()
     {
-        return Route::view('/', 'home');
+        return view('home');
     }
     public function about(){
-        return Route::view('/', 'about');
+        return view('about');
     }
     public function contactus(){
-        return Route::view('/', 'contactus');
+        return view('contactus');
     }
-    public function course(){
-
-        $courses = course::all();
+    public function course() {
+        $courses = Course::all();
         return view('course', compact('courses'));
     }
+
     public function niraj(){
         // $p contains the value captured from the URL
         return view('niraj');
     }
     public function admin(){
-        return Route::view('/', 'admin');
+        return view('admin');
     }
     public function dynamic(){
         return view('dynamic', compact('a', 'b'));
     }
-    public function post_courses(){
+    public function post_courses(Request $request){
        // Create new course instance
 $Course = new Course();
 $Course->name = $request->name;
@@ -48,4 +50,8 @@ if ($request->hasFile('file')) {
 $Course->save();
 return redirect()->back();
 }
+    public function admission(){
+        return view('admission');
+    }
+
 }
