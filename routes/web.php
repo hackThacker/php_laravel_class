@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\FrontendLayout;
 use App\Models\course;
+use App\Models\admission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,8 @@ Route::post('/post_courses', [FrontendLayout::class, 'post_courses'])->name('pos
 Route::get('/admission', [FrontendLayout::class, 'admission'])->name('admission');
 
 Route::get('/about', [FrontendLayout::class, 'about'])->name('about'); // Add this line for the 'about' route
+
+Route::post('/post_admission', [FrontendLayout::class, 'post_admission'])->name('post_admission');
 
 
 
