@@ -22,7 +22,6 @@ class FrontendLayout extends Controller
     }
     public function course() {
         $courses = Course::all();
-        $admission = Admission::all();
         return view('course', compact('courses','admission'));
     }
 

@@ -44,13 +44,13 @@
                     </td>
                     <td class="border border-black px-4 py-2">{{$course->name}}</td>
                     <td class="border border-black px-4 py-2">{{$course->price}}</td>
-                    
+
                     @endforeach
                 </tr>
             </tbody>
         </table>
     </div>
-    
+{{$courses}}
 
 </section>
 </x-frontend-layout>
