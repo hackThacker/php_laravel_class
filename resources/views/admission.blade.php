@@ -71,6 +71,54 @@
         </div>
     </div>
     </form>
+
+    <div>
+        <div class="container mx-auto">
+            <table class="w-full border border-black text-center">
+                <thead>
+                    <tr>
+                        <th class="border border-black px-4 py-2">SN</th>
+                        <th class="border border-black px-4 py-2">Images</th>
+                        <th class="border border-black px-4 py-2">course name</th>
+                        <th class="border border-black px-4 py-2">course price</th>
+                        <th class="border border-black px-4 py-2">full name</th>
+                        <th class="border border-black px-4 py-2">email</th>
+                        <th class="border border-black px-4 py-2">number</th>
+                        <th class="border border-black px-4 py-2">birthday</th>
+                        <th class="border border-black px-4 py-2">age</th>
+                        <th class="border border-black px-4 py-2">father number</th>
+                        <th class="border border-black px-4 py-2">mother number</th>
+                        <th class="border border-black px-4 py-2">citizenship number</th>
+                        <th class="border border-black px-4 py-2">location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($admissions as $niraj => $admission)
+                    <tr>
+                        <td class="border border-black px-4 py-2">{{ ++$niraj }}</td>
+                        <td class="border border-black px-4 py-2 w-40">
+                            <img src="{{ $admission->image }}" alt="images" srcset="">
+                        </td>
+                        <td class="border border-black px-4 py-2">{{ $admission->course_name }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->course_price }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->full_name }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->email }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->mobile_number }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->birthdate }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->age }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->father_number }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->mother_number }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->citizenship_id }}</td>
+                        <td class="border border-black px-4 py-2">{{ $admission->location }}</td>
+
+                    </tr>
+                @endforeach
+
+                    </tr>
+                </tbody>
+            </table>
+
+    </div>
 </x-frontend-layout>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
